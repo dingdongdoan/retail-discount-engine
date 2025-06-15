@@ -49,3 +49,10 @@ const displayItem = stockList[0];
 for (const attribute in displayItem) {
   console.log(`${attribute}: ${displayItem[attribute]}`);
 }
+
+console.log("\nUpdated Inventory Overview:");
+for (const item of stockList) {
+  const entryDetails = Object.entries(item);
+  const summary = entryDetails.map(([key, value]) => `${key}: ${value}`).join(" | ");
+  console.log(summary);
+}
