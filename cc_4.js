@@ -5,3 +5,20 @@ const stockList = [
   { name: "Method All-Purpose Cleaner", category: "household", price: 5.25, inventory: 20 },
   { name: "Sharpie Pen Set", category: "education", price: 11.99, inventory: 10 }
 ];
+
+for (const item of stockList) {
+  switch (item.category) {
+    case "electronics":
+      item.price *= 0.8; // 20% off
+      break;
+    case "apparel":
+      item.price *= 0.85; // 15% off
+      break;
+    case "groceries":
+    case "household":
+      item.price *= 0.9; // 10% off
+      break;
+    default:
+      break; // No discount
+  }
+}
