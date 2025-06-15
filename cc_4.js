@@ -22,3 +22,24 @@ for (const item of stockList) {
       break; // No discount
   }
 }
+
+const shopperProfiles = ["student", "senior", "regular"];
+
+for (let i = 0; i < 3; i++) {
+  const shopperType = shopperProfiles[i];
+  let purchaseTotal = 0;
+
+  for (const item of stockList) {
+    if (item.inventory > 0) {
+      purchaseTotal += item.price;
+      item.inventory -= 1;
+    }
+  }
+  if (shopperType === "student") {
+    purchaseTotal *= 0.95;
+  } else if (shopperType === "senior") {
+    purchaseTotal *= 0.93;
+  }
+
+  console.log(`Shopper ${i + 1} (${shopperType}) - Total after discounts: $${purchaseTotal.toFixed(2)}`);
+}
