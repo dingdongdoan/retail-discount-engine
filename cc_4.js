@@ -43,3 +43,9 @@ for (let i = 0; i < 3; i++) {
 
   console.log(`Shopper ${i + 1} (${shopperType}) - Total after discounts: $${purchaseTotal.toFixed(2)}`);
 }
+
+console.log("\nProduct snapshot after discounts (Sonos Roam Speaker):");
+const displayItem = stockList[0];
+for (const attribute in displayItem) {
+  console.log(`${attribute}: ${displayItem[attribute]}`);
+}
